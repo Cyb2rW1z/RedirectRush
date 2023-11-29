@@ -5,7 +5,7 @@ RedirectRush is a simple command-line tool designed to identify potential open r
 The tool uses a bash script (openredirect.sh) to iterate through a list of URLs (real) and checks if the redirects contain specific patterns indicative of a potential security risk, such as redirecting to a domain with "evil.com" in the location or host headers. When a potential open redirect is detected, the tool prints a message indicating the URL where the vulnerability was found.
 ## Usage
 ```
-git clone https://github.com/your-username/RedirectRush.git
+git clone https://github.com/Cyb2rW1z/RedirectRush.git
 cd RedirectRush
 ```
 Make sure the openredirect.sh script has executable permissions:
