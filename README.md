@@ -23,3 +23,28 @@ The tool will analyze each URL in the real file and report potential open redire
 ## Customization
 
 You can customize the script to fit your needs. For example, you may want to modify the script to log the findings or integrate it into an automated testing pipeline. Feel free to adapt the script based on your specific requirements.
+
+
+
+# My method to make this script work.
+
+First i need to have file contains parameters.
+i usually use paramspider and arjun to get the parameters
+
+# command
+```
+paramspider -d {the domain}
+```
+if you want to download paramspider here. 
+https://github.com/devanshbatham/ParamSpider
+
+and after that the tool will generate folder named results/{domain-name.txt} with file for the domain contains params.
+
+after that i usually sed the word FUZZ to make it work perfectly. 
+```
+cat results/{domain-name.txt} | grep "redirect_url" | sed -e 's/FUZZ//' | tee real
+```
+this command will delete the word `FUZZ` on the parameters called `redirect_url` and will store it in file  named real after that you just run RedirectRush.
+
+
+Thats it !
